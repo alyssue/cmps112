@@ -6,6 +6,7 @@ Character extend [
    isGraph [
       ^ (Character space < self) & (self <= $~)
    ]
+   
    visible [
       self isGraph ifTrue: [^ '$', self asString]
                    ifFalse: [^ self asInteger printStringRadix: 16]
@@ -14,6 +15,7 @@ Character extend [
 
 Object subclass: BitStream [
    |bitIndex byte myStream|
+
    BitStream class >> new: fileStream [
       |result|
       result := super new.
@@ -38,6 +40,9 @@ Object subclass: BitStream [
    currByte [
       ^byte
    ]
+
+   
+   
 ]
 
 nl := Character nl.

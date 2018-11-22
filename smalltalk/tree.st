@@ -3,20 +3,20 @@
 
 nl := Character nl.
 
-Object subclass: Leaf [ "Objact class declaration: Leaf"
-   |char count| "there are variables char and count"
-   char [ ^ char ] "return char"
-   count [ ^ count ] "return count"
+Object subclass: Leaf [
+   |char count|
+   char [ ^ char ]
+   count [ ^ count ]
 
-   Leaf class >> new [ "get the class corresponding to Leaf"
+   Leaf class >> new [
       self shouldNotImplement
    ]
 
-   Leaf class >> new: aChar count: aCount [ "create new leaf, leaf takes aCharacter and aCount"
-      |result| "has variable of result"
-      result := super new. "the result = parent method 'new' "
+   Leaf class >> new: aChar count: aCount [
+      |result|
+      result := super new.
       result setChar: aChar andCount: aCount.
-      ^result "return result"
+      ^result
    ]
 
    setChar: aChar andCount: aCount [
@@ -45,16 +45,16 @@ Object subclass: Leaf [ "Objact class declaration: Leaf"
 
 
 Leaf subclass: Tree [
-   |left right| "left and right variables"
+   |left right|
 
    Tree class >> new: aChar count: aCount [
       self shouldNotImplement
    ]
 
    Tree class >> new: aChar count: aCount left: aLeft right: aRight [
-      |result| "variable result;"
-      result := super new: aChar count: aCount. " the result is the super, character, and count passed"
-      result setLeft: aLeft andRight: aRight. " set the left of the result "
+      |result|
+      result := super new: aChar count: aCount.
+      result setLeft: aLeft andRight: aRight.
       ^ result
    ]
 

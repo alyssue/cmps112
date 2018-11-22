@@ -5,12 +5,13 @@ execname := '$RCSfile: catfile.st,v $' =~ '.*: (.*),v.*' at: 1.
 FileStream extend [
    nl := Character nl.
    catFile [
-      |count|
-      count := 0.
-      [self atEnd not] whileTrue: [
-         count := count + 1.
-         count asString size to: 5 do: [:skip| stdout << ' '].
-         stdout << count << ': ' << self nextLine << nl.
+      |thisChar frequencyTable frequency|
+"      frequencyTable := Dictionary new.
+      "      [self atEnd not] whileTrue: [
+         thisChar := self next.
+"         frequency := frequencyTable keyAtValue: thisChar ifAbsent: [frequency := 0.]."
+"         frequencyTable add: thisChar->[frequency+1.].
+"         stdout << thisChar.
       ]
    ]
 ]

@@ -1,0 +1,13 @@
+;;File: 00-hello-world.sb
+;;   1: # $Id: 00-hello-world.sbir,v 1.1 2018-09-27 14:31:36-07 - - $
+;;   2: #
+;;   3: # Classic Hello World program.
+;;   4: #
+;;   5: print "Hello, World!"
+(
+(    1          )
+(    2          )
+(    3          )
+(    4          )
+(    5          (print "Hello, World!"))
+)

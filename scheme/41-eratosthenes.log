@@ -1,0 +1,23 @@
+vector-set!: index is out of range
+  index: 100
+  valid range: [0, 99]
+  vector: #(0 0 1.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 1.0...
+  context...:
+   /afs/cats.ucsc.edu/users/a/amelton/cs112/scheme/./sbi.scm:168:0: interpret-let
+   /afs/cats.ucsc.edu/users/a/amelton/cs112/scheme/./sbi.scm:245:0: interpret-program
+   /afs/cats.ucsc.edu/users/a/amelton/cs112/scheme/./sbi.scm:245:0: interpret-program
+   /afs/cats.ucsc.edu/users/a/amelton/cs112/scheme/./sbi.scm:245:0: interpret-program
+   /afs/cats.ucsc.edu/users/a/amelton/cs112/scheme/./sbi.scm:245:0: interpret-program
+   /afs/cats.ucsc.edu/users/a/amelton/cs112/scheme/./sbi.scm:245:0: interpret-program
+   /afs/cats.ucsc.edu/users/a/amelton/cs112/scheme/./sbi.scm:245:0: interpret-program
+   /afs/cats.ucsc.edu/users/a/amelton/cs112/scheme/./sbi.scm:245:0: interpret-program
+   /afs/cats.ucsc.edu/users/a/amelton/cs112/scheme/./sbi.scm:245:0: interpret-program
+   /afs/cats.ucsc.edu/users/a/amelton/cs112/scheme/./sbi.scm:245:0: interpret-program
+   /afs/cats.ucsc.edu/users/a/amelton/cs112/scheme/./sbi.scm:245:0: interpret-program
+   /afs/cats.ucsc.edu/users/a/amelton/cs112/scheme/./sbi.scm:245:0: interpret-program
+   /afs/cats.ucsc.edu/users/a/amelton/cs112/scheme/./sbi.scm:245:0: interpret-program
+   /afs/cats.ucsc.edu/users/a/amelton/cs112/scheme/./sbi.scm:245:0: interpret-program
+   /afs/cats.ucsc.edu/users/a/amelton/cs112/scheme/./sbi.scm:245:0: interpret-program
+   /afs/cats.ucsc.edu/users/a/amelton/cs112/scheme/./sbi.scm:245:0: interpret-program...
+
+2.0
