@@ -1,0 +1,4 @@
+#!/bin/sh
+# $Id: mk.build,v 1.3 2018-10-25 14:00:00-07 - - $
+checksource R* M* *.m* >check.log 2>&1
+gmake >gmake.log 2>&1

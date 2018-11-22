@@ -1,0 +1,13 @@
+
+Alyssa Melton
+amelton@ucsc.edu
+Assignment 3
+hzip.st - file compression and decompression utility
+
+Some code borrowed from example files included 
+catfile.st
+bitstream.st
+outbits.st
+charfreq.st
+extendstream.st
+tree.st

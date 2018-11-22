@@ -1,0 +1,99 @@
+pmake [-d] [target]
+
+want to use -d for debug. put them into an if. 
+
+output is not described because it doesn't matter, it's for you and your own use. 
+
+
+
+[target], first target is always used. 
+do what 'make' what usually do. 
+
+
+read graders instruction in .score.
+
+
+exit status is always 16 bit number. 8, 1, and 7. first 8 is exit. (0...255) 0 is success any other is failure. 
+
+the 1 bit after 8 will indicate whether the prcess dumped core. whether set core file limit to some limit higher than 0. can ignore. core is file derived from early history of computation. 
+
+
+the last 7 bits are for signal which crashes the program. example int division by zero or segmentation fault. 
+
+program has to grab 16 bit num and figure out what to do with it. see what make does with each one of them. 
+
+# Any line with begins with a hash, possibly preceded by whitespace (spaces
+and tabs) is ignored. Empty lines consisting only of whitespace are
+also ignored.
+
+
+macro = value
+Macro definitions are kept in a symbol (hash) table, to be substituted
+later.
+
+target... : prerequisite ...
+Each target’s time stamp is checked against the time stamps of each of
+the prerequisites. If the target or prerequisite contains a percent sign
+(%), it is substituted consistently. If any target is obsolete, the following
+commands are executed. A target is obsolete if it is a file that is older
+than the prerequisites or does not exist. A prerequisite is either a file or
+another target. If a file, its time stamp is checked. If not, the target to
+which is refers is made recursively. No target is made more than once.
+
+
+command
+A command is any line for which the first character is a tab . The line is
+echoed to STDOUT before executing the command. The line is then passed
+to the system function call for execution by the shell. The resulting exit
+status and signal is then tested. If either is non-zero, pmake exits at that
+point.
+
+@ command
+Behaves like command, except that the command is not echoed to STDOUT
+before being executed. do not echo command to standard output.
+
+- command
+Behaves like command, except that a non-zero exit status or signal does
+not cause pmake to exit at that point.
+
+Whenever a dollar sign appears in the input file, it represents a macro substitution.
+Macros are substituted from innermost to outermost braces. If a dollar
+sign is followed by any character except a left brace that one character is the
+macro name. Otherwise, the characters between the braces constitute the
+name of the macro.
+$$ Represents the dollar sign itself.
+$< Represents the first file specified as a prerequisite.
+$@ Represents the first file specified as a target.
+${ ... } The contents of the braces are substituted with the value of the
+macro name, which may be multiple characters, not including a
+closing brace.
+
+
+my $term_signal = $? & 0x7F;					
+my $core_dumped = $? & 0x80;					turn on if bit 9 on
+my $exit_status = ($? >> 8) & 0xFF; 			mask off low order bits. 
+
+
+hash tables are built into the language and are a substitute for struct.
+
+$p = {FOO=> 3, BAR => [1, 2, 3]}
+
+would look in java like 
+[p -]---> [Foo, 3]
+		  [Bar, -]----> [1, 2, 3]
+
+
+find out what modification time on file would be. stack system call returns an array of 9 attributes associated with file. 
+when use the ls command. ls -la
+all ls does is call stack system call and print result for each field. 
+
+
+
+
+
+
+
+
+
+
+
