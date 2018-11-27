@@ -94,11 +94,11 @@ Also special names: $0,    #name of script running
                     @ARGV,  #argument list
                     $_,     #'it' single thing default variable
                     $!,     # for error messgaes
-                    $., 
-                    $& 
+                    $.,
+                    $&
 -----------------------------------------------------------------
 Scalars:
-   $sigil                                         #int double and string are the same. 
+   $sigil                                         #int double and string are the same.
    - may contain numbers (integer or double)
    - strings
    - references
@@ -106,12 +106,12 @@ Scalars:
 
 Strings:
    - bounded by 'abc', "abc", or `abc`
-   - '$abc\n' is the literal strings itself 
+   - '$abc\n' is the literal strings itself
    - "$abc\n" is the value of the variable $abc followed by nl char
    - `time` is the output of running the command time by the shell
 
 
-   concattenation; $a = $b.$c;
+   concatenation; $a = $b.$c;
 
 
 Local variables declared by my:
@@ -124,7 +124,7 @@ $a = 6; $a = "abc"; ... type may change over time
 -----------------------------------------------------------------
 
 
-ARRAYS: 
+ARRAYS:
    @a for a whole array
    $a[$i] for an element of an array #result of indexing an array is a $scalar
    size may change over time
@@ -210,7 +210,7 @@ Boolean context:
 - undef, 0, '0', "0", "" are false; everything else is true
 
 
-"19" > "9" 
+"19" > "9"
 19 > 9
 
 "19" lt "9" #less than for strings
@@ -233,7 +233,7 @@ man perlop:
            left        + - .
            left        << >>
            nonassoc    named unary operators
-           nonassoc    < > <= >= lt gt le ge        # works on numbers 
+           nonassoc    < > <= >= lt gt le ge        # works on numbers
            nonassoc    == != <=> eq ne cmp
            left        &
            left        | ^
@@ -251,7 +251,7 @@ man perlop:
 . concatenation
 x repeititon:  $x = "-" x 10 means $x = "----------"
 == != < <= > >= numeric operators                     #always for numbers otherwise will convert to number
-eq ne lt le gt ge string operators like (strcmp)      #use for strings. 
+eq ne lt le gt ge string operators like (strcmp)      #use for strings.
 cmp is string.compareTo
 <=> is numeric.compareTo
 So:  19 > 9, but "19" lt 9
@@ -285,7 +285,7 @@ grep {boolexpr} @a - returns a subarray for which boolexpr is true
 map {expr} @a - maps each expr onto elements of araray
 @b = map {$_ * 2} @a; sets b - double of @a elements
 map {$set{$_} = 1} @array - creates a hash with keys from the array
-- all values are 1.  
+- all values are 1.
 
 -----------------------------------------------------------------
 
@@ -307,7 +307,7 @@ for (init; test; step) {stmt...}    # like java!
 for var (list) {stmt...}
 simple for $a;
 print "$_\n" for 1..10; - prints out numbers 1..10;
-for===foreach     #thesame lol. 
+for===foreach     #thesame lol.
 && || !? and or - all short circuit operators.
 
 do {stmt} until expr;
@@ -390,10 +390,10 @@ or STDIN if not.
 while (<>) {print} #read each line from each file in sequence and then print it all out!
 
 same as
-for my $filename (@ARGV) {        
+for my $filename (@ARGV) {
    open my $file, "<$filename" or warn "$0: $filename: $!\n" and next;          #name of script name of file error.
    while (defined (my $line = <$file>)) {
-      chomp $line;                #gets rid of last character if new line character. 
+      chomp $line;                #gets rid of last character if new line character.
       print $line, "\n";
    }
    close $file;
@@ -420,9 +420,9 @@ if (-d $dir) - checks for dir.
 <$f  reads
 >$f  writes
 >>$f append to end of that file
-|$f  f must be a unix command, write into unix commands stdin 
+|$f  f must be a unix command, write into unix commands stdin
 $f|  i want to read from unix command's standard output
-|$f| bad news - cause DEADLOCK. means two processes talking to each other and neither going to work. 
+|$f| bad news - cause DEADLOCK. means two processes talking to each other and neither going to work.
 
 -----------------------------------------------------------------
 
@@ -444,7 +444,7 @@ $0 =~ s/.*\///; - same as above
 
 Regular expressions have chars and metachars.  \ swaps the category.
 \d digits [0-9], \D non-digits [^0-9]         #matches any digit, any non digit
-\w word chars [a-zA-Z0-9_], \W non-word chars 
+\w word chars [a-zA-Z0-9_], \W non-word chars
 \s white space [ \t\n], \S non-whitespace
 .  any char same as [^\n]
 x*  zero or more x, greedy
@@ -483,4 +483,3 @@ if ($date =~ m/^(\d+)\/(\d+)\/(\d+)$/) {
 
 $a =~ m/$x/i; matches value of $i case insensitive
 $a =~ s/abc/def/g; global substitution
-
